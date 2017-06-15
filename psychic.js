@@ -23,16 +23,17 @@ document.onkeyup = function(event) {
   // console.log('event', event);
   userChoice = (event.key).toLowerCase();
   console.log('userChoice1', userChoice);
-  }
+  // }
 
 // console.log('userChoice2', userChoice);
 //and then ew need to compare the two,
 
-if (userChoice == computerChoice){
-  win++;
-  document.getElementById("userWin").innerHTML = win;
-  guessesLeft=10;
-}
+if (userChoice === computerChoice){
+  wins++;
+  console.log(wins);
+  document.querySelector('#wins').innerHTML = "wins: " + wins;
+} // guessesLeft=10;
+
 else {
 
 //CHECK WIN CONDITION: if they match, user wins
@@ -60,6 +61,6 @@ else {
   document.getElementById("loss").innerHTML = looses;
   // document.getElementById("guesses").innerHTML = guessesLeft;
 }
-  
+} 
     //increment the loosess
     //restart start game
