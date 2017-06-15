@@ -18,6 +18,12 @@ function computerMakesChoice() {
 
 computerMakesChoice();
 
+function reset() {
+  guessesLeft = 10;
+  document.querySelector('#guesses').innerHTML = "Guesses Left: 10";
+  wrongGuesses = [];
+  document.querySelector('#lettersUsed').innerHTML = "Letter Used:";
+}
 //the user picks a lettter of the alphabet,
 document.onkeyup = function(event) {
   // console.log('event', event);
@@ -27,12 +33,13 @@ document.onkeyup = function(event) {
 
 // console.log('userChoice2', userChoice);
 //and then ew need to compare the two,
-
-if (userChoice === computerChoice){
-  wins++;
-  console.log(wins);
-  document.querySelector('#wins').innerHTML = "wins: " + wins;
-} // guessesLeft=10;
+  if (userChoice === computerChoice){
+    wins++;
+    console.log(wins);
+    document.querySelector('#wins').innerHTML = "Wins: " + wins;
+    reset();
+    computerMakesChoice();
+    } // guessesLeft=10;
 
 else {
 
@@ -45,8 +52,11 @@ else {
 // }
 
   guessesLeft--;
-  
+  console.log(guessesLeft);
+  document.querySelector('#guesses').innerHTML = "Guesses Left: " + guessesLeft;
   wrongGuesses.push(userChoice);
+  console.log(wrongGuesses);
+  document.querySelector('#lettersUsed').innerHTML = "Letter Used: " + wrongGuesses;
   // document.getElementById("lettersUsed").innerHTML = wrongGuesse;
   }
 //if they don't matech,
@@ -56,11 +66,13 @@ else {
     //push the wrong letter guessed into array of wrong guesses
   //else, if user has 0 guesses left, user loosess
 
-  if(guessesLeft == 0) {
+  if (guessesLeft === 0) {
   looses++;
-  document.getElementById("loss").innerHTML = looses;
-  // document.getElementById("guesses").innerHTML = guessesLeft;
+  console.log(looses);
+  document.getElementById("loss").innerHTML = "Losses: " + looses;
+  reset();
+  // document.getElementById("guesses").innerHTML = guessesLeft;}
 }
-} 
+}
     //increment the loosess
     //restart start game
