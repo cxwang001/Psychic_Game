@@ -52,10 +52,10 @@ else {
 // }
 
   guessesLeft--;
-  console.log(guessesLeft);
+  // console.log(guessesLeft);
   document.querySelector('#guesses').innerHTML = "Guesses Left: " + guessesLeft;
   wrongGuesses.push(userChoice);
-  console.log(wrongGuesses);
+  // console.log(wrongGuesses);
   document.querySelector('#lettersUsed').innerHTML = "Letter Used: " + wrongGuesses;
   // document.getElementById("lettersUsed").innerHTML = wrongGuesse;
   }
