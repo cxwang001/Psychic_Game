@@ -39,32 +39,38 @@ document.onkeyup = function(event) {
     document.querySelector('#wins').innerHTML = "Wins: " + wins;
     reset();
     computerMakesChoice();
-    } // guessesLeft=10;
+    // guessesLeft=10;
+    }  else {
 
-else {
+                  //CHECK WIN CONDITION: if they match, user wins
+          // if(//comparison) {
+          //increment wins counter
 
-//CHECK WIN CONDITION: if they match, user wins
-// if(//comparison) {
-  //increment wins counter
+          // restart game
 
-  // restart game
+            // }
 
-// }
-
-  guessesLeft--;
-  // console.log(guessesLeft);
-  document.querySelector('#guesses').innerHTML = "Guesses Left: " + guessesLeft;
-  wrongGuesses.push(userChoice);
-  // console.log(wrongGuesses);
-  document.querySelector('#lettersUsed').innerHTML = "Letter Used: " + wrongGuesses;
-  // document.getElementById("lettersUsed").innerHTML = wrongGuesse;
-  }
-//if they don't matech,
-  //if user has guesses left,
-    //number of guesses decreases
-    //then they get to guess again
-    //push the wrong letter guessed into array of wrong guesses
-  //else, if user has 0 guesses left, user loosess
+      guessesLeft--;
+      // console.log(guessesLeft);
+      document.querySelector('#guesses').innerHTML = "Guesses Left: " + guessesLeft;
+      // if user choice in wrong guess, do nothing
+      // if it's not in wrong guess, push to array
+      // for(var i=0; i <= wrongGuesses.length; i++) {
+      //     console.log("For loop");
+      //     if (userChoice != wrongGuesses[i]) {
+              
+              wrongGuesses.push(userChoice);
+              document.querySelector('#lettersUsed').innerHTML = "Letter Used: " + wrongGuesses;
+              // document.getElementById("lettersUsed").innerHTML = wrongGuesse;
+              
+      }
+ 
+    //if they don't matech,
+      //if user has guesses left,
+        //number of guesses decreases
+        //then they get to guess again
+        //push the wrong letter guessed into array of wrong guesses
+      //else, if user has 0 guesses left, user loosess
 
   if (guessesLeft === 0) {
   looses++;
@@ -72,7 +78,7 @@ else {
   document.getElementById("loss").innerHTML = "Losses: " + looses;
   reset();
   // document.getElementById("guesses").innerHTML = guessesLeft;}
-}
-}
-    //increment the loosess
+  }
+  }
+  //increment the loosess
     //restart start game
