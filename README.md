@@ -1,4 +1,6 @@
 # Psychic_Game
+![image](https://user-images.githubusercontent.com/27830803/29238182-1f8c6a48-7ee4-11e7-85a9-eddf0a866ebf.png)
+
 
 1. The app randomly picks a letter, and the user has to guess which letter the app chose. Put the following text on your page:
 
@@ -15,3 +17,5 @@
 7. When the player wins, increase the Wins counter and start the game over again (without refreshing the page).
 
 8. When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins).
+
+
